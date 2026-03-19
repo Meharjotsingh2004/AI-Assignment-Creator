@@ -1,8 +1,7 @@
 # Node dependencies
-/server/node_modules/
-
-# Lock files
-/server/package-lock.json
+node_modules/
+client/node_modules/
+server/node_modules/
 
 # Logs
 npm-debug.log*
@@ -16,6 +15,8 @@ yarn-error.log*
 .env
 .env.local
 .env.*.local
+client/.env
+server/.env
 
 # VS Code
 .vscode/
