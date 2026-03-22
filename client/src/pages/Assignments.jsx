@@ -14,7 +14,7 @@ export default function Assignments() {
 
   const fetchAssignments = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/api/assignments");
+      const res = await axios.get(`${BASE_URL}/api/assignments`);
       setAssignments(res.data);
     } catch (err) {
       console.error(err);

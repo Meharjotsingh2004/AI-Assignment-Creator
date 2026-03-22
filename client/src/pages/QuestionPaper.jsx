@@ -25,7 +25,7 @@ export default function QuestionPaper() {
 
   const fetchAssignment = async () => {
     try {
-      const res = await axios.get(`http://localhost:8000/api/assignments/${id}`);
+      const res = await axios.get(`${BASE_URL}/api/assignments/${id}`);
       const data = res.data;
       setStatus(data.status);
       if (data.result) setResult(data.result);

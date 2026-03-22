@@ -97,7 +97,7 @@ export default function CreateAssignment() {
         additionalInstructions: additionalInfo,
       };
 
-      const res = await axios.post("http://localhost:8000/api/assignments", payload);
+      const res = await axios.post(`${BASE_URL}/api/assignments`, payload);
       const { assignmentId } = res.data;
 
       setAssignmentId(assignmentId);

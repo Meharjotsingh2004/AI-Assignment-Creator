@@ -18,6 +18,8 @@ dotenv.config({ path: path.join(__dirname, "../.env") });
 const connection = {
   host: process.env.REDIS_HOST,
   port: process.env.REDIS_PORT,
+  password: process.env.REDIS_PASSWORD,
+  tls: {}  
 };
 
 // Connect worker to MongoDB
