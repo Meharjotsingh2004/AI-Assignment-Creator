@@ -57,4 +57,24 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+// GET /api/assignments — fetch all
+router.get("/", async (req, res) => {
+  try {
+    const assignments = await Assignment.find().sort({ createdAt: -1 });
+    res.json(assignments);
+  } catch (err) {
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
+// DELETE /api/assignments/:id
+router.delete("/:id", async (req, res) => {
+  try {
+    await Assignment.findByIdAndDelete(req.params.id);
+    res.json({ success: true });
+  } catch (err) {
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
 export default router;
