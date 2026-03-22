@@ -14,17 +14,16 @@ const app = express();
 const httpServer = http.createServer(app);
 
 const io = new Server(httpServer, {
-    cors: { origin: process.env.CLIENT_URL, methods: ["GET", "POST"] },
+  cors: {
+    origin: process.env.CLIENT_URL.replace(/\/$/, ""),
+    methods: ["GET", "POST"],
+  },
 });
 
-initSocket(io);
-app.set("io", io);
+app.use(cors({
+  origin: process.env.CLIENT_URL.replace(/\/$/, ""),
+}));
 
-
-//initSocket(io);
-
-//middleWare
-app.use(cors({ origin: process.env.CLIENT_URL }));
 
 app.use(express.json());
 
