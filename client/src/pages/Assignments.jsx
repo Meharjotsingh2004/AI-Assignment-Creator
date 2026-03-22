@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import BASE_URL from "../config";  // ← add this
+
 
 export default function Assignments() {
   const [assignments, setAssignments] = useState([]);
@@ -127,7 +129,7 @@ function AssignmentCard({ assignment, formatDate, onView, onRefresh }) {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:8000/api/assignments/${assignment._id}`);
+      await axios.delete(`${BASE_URL}/api/assignments/${assignment._id}`);
       onRefresh();
     } catch (err) {
       console.error(err);

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import useAssignmentStore from "../store/assignmentStore";
 import socket from "../socket";
+import BASE_URL from "../config";  // ← add this
 
 const QUESTION_TYPE_OPTIONS = [
   "Multiple Choice Questions",
@@ -121,7 +122,7 @@ export default function CreateAssignment() {
       const poll = setInterval(async () => {
         try {
           const check = await axios.get(
-            `http://localhost:8000/api/assignments/${assignmentId}`
+            `${BASE_URL}/api/assignments/${assignmentId}`
           );
           if (check.data.status === "completed") {
             setStatus("completed");

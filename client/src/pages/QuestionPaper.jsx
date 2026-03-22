@@ -4,6 +4,8 @@ import axios from "axios";
 import useAssignmentStore from "../store/assignmentStore";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
+import BASE_URL from "../config";  // ← add this
+
 
 const difficultyStyles = {
   easy: "bg-green-100 text-green-700",
