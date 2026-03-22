@@ -1,6 +1,6 @@
 import { Bell } from "lucide-react";
 import { useLocation } from "react-router-dom";
-import Sidebar from "./SideBar";
+import Sidebar from "./Sidebar.jsx";
 
 const pageTitles = {
   "/": "Home",
