@@ -12,4 +12,8 @@ const connection = {
 
 export const assignmentQueue = new Queue("assignment-generation", {
   connection,
+  defaultJobOptions: {
+    removeOnComplete: true,  // removes job from Redis after completion
+    removeOnFail: true,      // removes failed jobs too
+  },
 });

@@ -56,7 +56,11 @@ const worker = new Worker(
       io?.to(assignmentId).emit("status", { status: "failed" });
     }
   },
-  { connection }
+  { 
+    connection,
+    stalledInterval: 30000,    // check stalled jobs every 30s instead of default
+    lockDuration: 30000,
+  }
 );
 
 console.log("Worker started, waiting for jobs...");
