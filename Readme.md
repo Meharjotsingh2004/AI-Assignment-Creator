@@ -1,4 +1,4 @@
-# VedaAI — AI Assessment Creator
+# GEN AI — AI Assessment Creator
 
 > Built for the VedaAI Full Stack Engineering Assignment.
 
